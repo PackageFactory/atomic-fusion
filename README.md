@@ -1,6 +1,6 @@
 # PackageFactory.AtomicFusion
 
-Prototypes that help implementing atomic-design and a component-architeture in Neos.Fusion
+> Prototypes that help implementing atomic-design and a component-architecture in Neos.Fusion
 
 ## Usage 
 
@@ -15,8 +15,8 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
     description = ''
 
     #
-    # the value path is rendered witn the props in the context
-    # that way regardless off nesting the props can be acessed
+    # the value path is rendered within the props in the context
+    # that way regardless off nesting the props can be accessed
     # easily via ${props.__name__}
     # 
     value = TYPO3.TypoScript:Tag {
