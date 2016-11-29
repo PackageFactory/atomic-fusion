@@ -17,7 +17,7 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
     #
     # the value path is rendered witn the props in the context
     # that way regardless off nesting the props can be acessed
-    # easily via ${propt.__name__}
+    # easily via ${props.__name__}
     # 
     value = TYPO3.TypoScript:Tag {
         content = TYPO3.TypoScript:Array {
