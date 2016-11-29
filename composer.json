@@ -1,0 +1,18 @@
+{
+    "description": "Add description here",
+    "type": "neos-package",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "name": "packagefactory/atomicfusion",
+    "autoload": {
+        "psr-0": {
+            "PackageFactory\\AtomicFusion": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "PackageFactory.AtomicFusion"
+        }
+    }
+}
