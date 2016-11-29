@@ -1,5 +1,5 @@
 {
-    "description": "Add description here",
+    "description": "Prototypes that help implementing atomic-design and a component-architecture in Neos.Fusion",
     "type": "neos-package",
     "require": {
         "typo3/flow": "*"
