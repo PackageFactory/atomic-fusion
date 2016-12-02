@@ -8,18 +8,18 @@
 prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Component) {
     
     #
-    # all fusion properties except value are evaluated and passed 
-    # as props object via context
+    # all fusion properties except renderer are evaluated and passed 
+    # are made available to the renderer as object ``props`` in the context
     # 
     title = ''
     description = ''
 
     #
-    # the value path is rendered within the props in the context
+    # the renderer path is evaluated with the props in the context
     # that way regardless off nesting the props can be accessed
     # easily via ${props.__name__}
     # 
-    value = TYPO3.TypoScript:Tag {
+    renderer = TYPO3.TypoScript:Tag {
         content = TYPO3.TypoScript:Array {
             headline = TYPO3.TypoScript:Tag {
                 tagName = 'h1'
