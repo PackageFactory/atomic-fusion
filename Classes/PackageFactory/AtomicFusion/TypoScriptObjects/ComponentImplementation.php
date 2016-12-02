@@ -21,7 +21,7 @@ class ComponentImplementation extends ArrayImplementation
      *
      * @var array
      */
-    protected $ignoreProperties = ['__meta', 'value'];
+    protected $ignoreProperties = ['__meta', 'renderer'];
 
     /**
      * Return render value with the properties as ``props`` in the context
@@ -44,7 +44,7 @@ class ComponentImplementation extends ArrayImplementation
         $context = $this->tsRuntime->getCurrentContext();
         $context['props'] = $props;
         $this->tsRuntime->pushContextArray($context);
-        $result = $this->tsRuntime->render($this->path . '/value');
+        $result = $this->tsRuntime->render($this->path . '/renderer');
         $this->tsRuntime->popContext();
 
         return $result;
