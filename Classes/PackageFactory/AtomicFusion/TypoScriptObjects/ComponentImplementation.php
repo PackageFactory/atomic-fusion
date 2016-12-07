@@ -1,30 +1,42 @@
 <?php
 namespace PackageFactory\AtomicFusion\TypoScriptObjects;
 
+/**
+ * This file is part of the PackageFactory.AtomicFusion package
+ *
+ * (c) 2016
+ * Wilhelm Behncke <wilhelm.behncke@googlemail.com>
+ * Martin Ficzel <martin.ficzel@gmx.de>
+ *
+ * This package is Open Source Software. For the full copyright and license
+ * information, please view the LICENSE file which was distributed with this
+ * source code.
+ */
+
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\TypoScript\TypoScriptObjects\ArrayImplementation;
 
 /**
  * A TypoScript Component-Object
  *
- * All properties except ``value`` are pushed into a context variable ``props``
- * with that context the value is rendered
+ * All properties except ``renderer`` are pushed into a context variable ``props``
+ * afterwards the ``renderer`` is evaluated
  *
- * //tsPath value The variable to display a dump of.
+ * //tsPath renderer The variable to display a dump of.
+ * //tsPath * generic Fusion values that will be added to the ``props`` object in the context
  * @api
  */
 class ComponentImplementation extends ArrayImplementation
 {
     /**
-     * If you iterate over "properties" these in here should usually be ignored.
-     * For example additional properties in "Case" that are not "Matchers".
+     * Properties that are ignored and added to the props
      *
      * @var array
      */
     protected $ignoreProperties = ['__meta', 'renderer'];
 
     /**
-     * Return render value with the properties as ``props`` in the context
+     * Evaluate the fusion-keys as props and afterwards the renderer
      *
      * @return void|string
      */
