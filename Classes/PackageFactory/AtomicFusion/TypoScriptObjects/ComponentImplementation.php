@@ -36,7 +36,8 @@ class ComponentImplementation extends ArrayImplementation
     protected $ignoreProperties = ['__meta', 'renderer'];
 
     /**
-     * Evaluate the fusion-keys as props and afterwards the renderer
+     * Evaluate the fusion-keys and transfer the result into the context as ``props``
+     * afterwards evaluate the ``renderer`` with this context
      *
      * @return void|string
      */
