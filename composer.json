@@ -1,10 +1,10 @@
 {
+    "name": "packagefactory/atomicfusion",
     "description": "Prototypes that help implementing atomic-design and a component-architecture in Neos.Fusion",
     "type": "neos-package",
     "require": {
-        "typo3/flow": "*"
+        "typo3/typoscript": "~2.3.0"
     },
-    "name": "packagefactory/atomicfusion",
     "autoload": {
         "psr-0": {
             "PackageFactory\\AtomicFusion": "Classes/"

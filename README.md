@@ -33,3 +33,14 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
       }
 }
 ```
+
+## Installation
+
+PackageFactory.AtomicFusion is available via packagist. Just add `"packagefactory/atomicfusion" : "~1.0"` to the 
+require-dev section of the composer.json or run `composer require packagefactory/atomicfusion`. 
+
+We use semantic-versioning so every breaking change will increase the major-version number.
+
+## License
+
+see [LICENSE file](LICENSE)
