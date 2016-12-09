@@ -2,6 +2,19 @@
     "name": "packagefactory/atomicfusion",
     "description": "Prototypes that help implementing atomic-design and a component-architecture in Neos.Fusion",
     "type": "neos-package",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Martin Ficzel",
+            "email": "martin.ficzel@gmx.de",
+            "role": "Developer"
+        },
+        {
+            "name": "Wilhelm Behncke",
+            "email": "wilhelm.behncke@googlemail.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "typo3/typoscript": "~2.3.0"
     },
