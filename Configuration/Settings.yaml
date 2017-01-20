@@ -1,5 +1,6 @@
-TYPO3:
+
+Neos:
   Neos:
     typoScript:
       autoInclude:
-        'PackageFactory.AtomicFusion': TRUE
+        PackageFactory.AtomicFusion: true
