@@ -17,6 +17,7 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
     # 
     title = ''
     description = ''
+    bold = false
 
     #
     # the renderer path is evaluated with the props in the context
