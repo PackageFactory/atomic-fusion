@@ -34,7 +34,7 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
         #
         attributes.class = PackageFactory.AtomicFusion:ClassNames {
             component = true
-            component--bold = ${props.bold ? true:false} 
+            component--bold = ${props.bold} 
         }
         
         content = Neos.Fusion:Array {
