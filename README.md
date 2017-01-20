@@ -2,6 +2,10 @@
 
 > Prototypes that help implementing atomic-design and a component-architecture in Neos.Fusion
 
+- `PackageFactory.AtomicFusion:Component`: create component that adds all properties to the `props` context 
+and afterwards evaluetes the `renderer`
+- `PackageFactory.AtomicFusion:ClassNames`: create conditional class-names from fusion-keys that are evaluated as booleam 
+
 ## Usage 
 
 ```
@@ -20,6 +24,18 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
     # easily via ${props.__name__}
     # 
     renderer = Neos.Fusion:Tag {
+    
+        #
+        # the properties of the AtomicFusion:ClassNames object are evaluated 
+        # and the keys of all non-false properties are returned
+        # 
+        # this allows effective definition of conditional css-classes
+        #
+        attributes.class = PackageFactory.AtomicFusion:ClassNames {
+            component = true
+            component--bold = ${props.bold ? true:false} 
+        }
+        
         content = Neos.Fusion:Array {
             headline = Neos.Fusion:Tag {
                 tagName = 'h1'
