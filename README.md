@@ -4,7 +4,7 @@
 
 - `PackageFactory.AtomicFusion:Component`: create component that adds all properties to the `props` context 
 and afterwards evaluetes the `renderer`
-- `PackageFactory.AtomicFusion:ClassNames`: create conditional class-names from fusion-keys that are evaluated as booleam 
+- `PackageFactory.AtomicFusion:ClassNames`: create conditional class-names from fusion-keys
 
 ## Usage 
 
