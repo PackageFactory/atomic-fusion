@@ -17,13 +17,13 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Fusion\FusionObjects\ArrayImplementation;
 
 /**
- * A TypoScript Component-Object
+ * A Fusion Component-Object
  *
  * All properties except ``renderer`` are pushed into a context variable ``props``
  * afterwards the ``renderer`` is evaluated
  *
- * //tsPath renderer The variable to display a dump of.
- * //tsPath * generic Fusion values that will be added to the ``props`` object in the context
+ * //fusionPath renderer The variable to display a dump of.
+ * //fusionPath * generic Fusion values that will be added to the ``props`` object in the context
  * @api
  */
 class ComponentImplementation extends ArrayImplementation

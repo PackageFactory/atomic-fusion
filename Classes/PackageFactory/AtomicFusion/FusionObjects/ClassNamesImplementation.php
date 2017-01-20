@@ -17,7 +17,7 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Fusion\FusionObjects\ArrayImplementation;
 
 /**
- * A TypoScript ClassNames-Object
+ * A Fusion ClassNames-Object
  *
  * All property keys are concatenated into a single string, that can be assigned to a html class
  * attribute, if their value evaluates to `true`.
