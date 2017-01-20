@@ -14,7 +14,7 @@ namespace PackageFactory\AtomicFusion\TypoScriptObjects;
  */
 
 use Neos\Flow\Annotations as Flow;
-use TYPO3\TypoScript\TypoScriptObjects\ArrayImplementation;
+use Neos\Fusion\TypoScriptObjects\ArrayImplementation;
 
 /**
  * A TypoScript ClassNames-Object
