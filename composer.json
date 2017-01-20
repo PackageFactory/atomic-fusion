@@ -26,6 +26,9 @@
     "extra": {
         "neos": {
             "package-key": "PackageFactory.AtomicFusion"
-        }
+        },
+        "applied-flow-migrations": [
+            "TYPO3.FLOW3-201201261636"
+        ]
     }
 }
