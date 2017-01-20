@@ -1,5 +1,5 @@
 <?php
-namespace PackageFactory\AtomicFusion\TypoScriptObjects;
+namespace PackageFactory\AtomicFusion\FusionObjects;
 
 /**
  * This file is part of the PackageFactory.AtomicFusion package
@@ -43,10 +43,10 @@ class ComponentImplementation extends ArrayImplementation
      */
     public function evaluate()
     {
-        $sortedChildTypoScriptKeys = $this->sortNestedTypoScriptKeys();
+        $sortedChildFusionKeys = $this->sortNestedTypoScriptKeys();
 
         $props = [];
-        foreach ($sortedChildTypoScriptKeys as $key) {
+        foreach ($sortedChildFusionKeys as $key) {
             try {
                 $props[$key] = $this->tsValue($key);
             } catch (\Exception $e) {

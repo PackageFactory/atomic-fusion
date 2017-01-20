@@ -19,14 +19,14 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
     # that way regardless off nesting the props can be accessed
     # easily via ${props.__name__}
     # 
-    renderer = TYPO3.TypoScript:Tag {
-        content = TYPO3.TypoScript:Array {
-            headline = TYPO3.TypoScript:Tag {
+    renderer = Neos.Fusion:Tag {
+        content = Neos.Fusion:Array {
+            headline = Neos.Fusion:Tag {
                 tagName = 'h1'
                 content = ${props.title}
             }
 
-            description = TYPO3.TypoScript:Tag {
+            description = Neos.Fusion:Tag {
                 tagName = 'p'
                 content = ${props.description}
             }

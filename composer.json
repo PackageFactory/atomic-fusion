@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "typo3/typoscript": "~2.3.0"
+        "neos/fusion": "~3.0.0"
     },
     "autoload": {
         "psr-0": {

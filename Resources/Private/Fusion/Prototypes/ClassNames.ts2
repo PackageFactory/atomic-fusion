@@ -1,3 +1,0 @@
-prototype(PackageFactory.AtomicFusion:ClassNames) {
-	@class = 'PackageFactory\\AtomicFusion\\TypoScriptObjects\\ClassNamesImplementation'
-}
