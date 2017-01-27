@@ -38,11 +38,11 @@ class ClassNamesImplementation extends ArrayImplementation
      */
     public function evaluate()
     {
-        $sortedChildFusionKeys = $this->sortNestedTypoScriptKeys();
+        $sortedChildFusionKeys = $this->sortNestedFusionKeys();
 
         $props = [];
         foreach ($sortedChildFusionKeys as $key) {
-            if ($this->tsValue($key)) {
+            if ($this->fusionValue($key)) {
                 $props[] = $key;
             }
         }
