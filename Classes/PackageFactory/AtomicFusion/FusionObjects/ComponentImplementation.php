@@ -43,22 +43,22 @@ class ComponentImplementation extends ArrayImplementation
      */
     public function evaluate()
     {
-        $sortedChildFusionKeys = $this->sortNestedTypoScriptKeys();
+        $sortedChildFusionKeys = $this->sortNestedFusionKeys();
 
         $props = [];
         foreach ($sortedChildFusionKeys as $key) {
             try {
-                $props[$key] = $this->tsValue($key);
+                $props[$key] = $this->fusionValue($key);
             } catch (\Exception $e) {
-                $props[$key] = $this->tsRuntime->handleRenderingException($this->path . '/' . $key, $e);
+                $props[$key] = $this->runtime->handleRenderingException($this->path . '/' . $key, $e);
             }
         }
 
-        $context = $this->tsRuntime->getCurrentContext();
+        $context = $this->runtime->getCurrentContext();
         $context['props'] = $props;
-        $this->tsRuntime->pushContextArray($context);
-        $result = $this->tsRuntime->render($this->path . '/renderer');
-        $this->tsRuntime->popContext();
+        $this->runtime->pushContextArray($context);
+        $result = $this->runtime->render($this->path . '/renderer');
+        $this->runtime->popContext();
 
         return $result;
     }
