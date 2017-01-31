@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "neos/fusion": "~3.0.0"
+        "neos/fusion": "^3.0.0"
     },
     "autoload": {
         "psr-0": {
