@@ -47,7 +47,8 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
                 tagName = 'p'
                 content = ${props.description}
             }
-      }
+        }
+    }
 }
 ```
 
