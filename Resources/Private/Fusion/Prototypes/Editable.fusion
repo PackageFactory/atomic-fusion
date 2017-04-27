@@ -1,0 +1,13 @@
+prototype(PackageFactory.AtomicFusion:Editable) < prototype(PackageFactory.AtomicFusion:Component) {
+	property = null
+	inline = false
+
+	renderer = Neos.Fusion:Tag {
+		tagName = ${props.inline ? 'span' : 'div'}
+		content = ${q(node).property(props.property)}
+		@process.contentElementEditableWrapping = Neos.Neos:ContentElementEditable {
+			property = ${props.property}
+		}
+		@if.hasProperty = ${props.property ? true : false}
+	}
+}

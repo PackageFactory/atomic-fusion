@@ -5,8 +5,12 @@
 - `PackageFactory.AtomicFusion:Component`: create component that adds all properties to the `props` context 
 and afterwards evaluetes the `renderer`
 - `PackageFactory.AtomicFusion:ClassNames`: create conditional class-names from fusion-keys
+- `PackageFactory.AtomicFusion:Editable`: create and editable tag for a property
+- `PackageFactory.AtomicFusion:Content`: component base-prototype for inline editable content nodes 
 
 ## Usage 
+
+### 1. Component definition
 
 ```
 prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Component) {
@@ -44,7 +48,6 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
             }
 
             description = Neos.Fusion:Tag {
-                tagName = 'p'
                 content = ${props.description}
             }
         }
@@ -52,10 +55,47 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
 }
 ```
 
+### 2. Content Mapping
+
+```
+#
+# Map node content zo a presentational component 
+# 
+# instead of Neos.Neos:Content PackageFactory.AtomicFusion:Content 
+# is used base prototype 
+#
+prototype(Vendor.Site:ExampleContent) < prototype(PackageFactory.AtomicFusion:Content) {
+	renderer = Vendor.Site:Component {
+	
+		# 
+		# pass boolean property 'bold' from the
+		# node to the component
+		#
+		bold = ${q(node).property('bold')}	
+	
+		#
+		# use the editable component to pass an editable 
+		# inline-tag for the property 'title'
+		#
+		title = PackageFactory.AtomicFusion:Editable {
+			property = 'title'
+			inline = true
+		}
+		
+		#
+		# use the editable component to pass an editable 
+		# tag for the property 'description'
+		#
+		description = PackageFactory.AtomicFusion:Editable {
+			property = 'description'
+		}
+	}
+}
+```
+
 ## Installation
 
-PackageFactory.AtomicFusion is available via packagist. Just add `"packagefactory/atomicfusion" : "~1.0"` to the 
-require section of the composer.json or run `composer require packagefactory/atomicfusion`. 
+PackageFactory.AtomicFusion is available via packagist. Just run `composer require packagefactory/atomicfusion`. 
 
 We use semantic-versioning so every breaking change will increase the major-version number.
 
