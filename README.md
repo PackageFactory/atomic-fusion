@@ -75,11 +75,11 @@ prototype(Vendor.Site:ExampleContent) < prototype(PackageFactory.AtomicFusion:Co
 	
 		#
 		# use the editable component to pass an editable 
-		# inline-tag for the property 'title'
+		# but use a span instead a div tag in the backend
 		#
 		title = PackageFactory.AtomicFusion:Editable {
 			property = 'title'
-			inline = true
+			block = false
 		}
 		
 		#
