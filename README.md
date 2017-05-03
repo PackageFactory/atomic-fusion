@@ -59,10 +59,10 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
 
 ```
 #
-# Map node content zo a presentational component 
+# Map node content to a presentational component 
 # 
 # instead of Neos.Neos:Content PackageFactory.AtomicFusion:Content 
-# is used base prototype 
+# is used base prototype that adds the needed contentElementWrapping for the backend
 #
 prototype(Vendor.Site:ExampleContent) < prototype(PackageFactory.AtomicFusion:Content) {
 	renderer = Vendor.Site:Component {
