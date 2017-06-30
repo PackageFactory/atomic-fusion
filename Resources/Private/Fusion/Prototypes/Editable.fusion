@@ -1,13 +1,14 @@
 prototype(PackageFactory.AtomicFusion:Editable) < prototype(PackageFactory.AtomicFusion:Component) {
+	node = ${node}
 	property = null
 	block = true
 
 	renderer = Neos.Fusion:Case {
 		editable {
-			condition = ${node.context.inBackend && node.context.currentRenderingMode.edit}
+			condition = ${props.node.context.inBackend && props.node.context.currentRenderingMode.edit}
 			renderer = Neos.Fusion:Tag {
 				tagName = ${props.block ? 'div' : 'span'}
-				content = ${q(node).property(props.property)}
+				content = ${q(props.node).property(props.property)}
 				@process.contentElementEditableWrapping = Neos.Neos:ContentElementEditable {
 					property = ${props.property}
 				}
@@ -17,7 +18,7 @@ prototype(PackageFactory.AtomicFusion:Editable) < prototype(PackageFactory.Atomi
 
 		notEditable {
 			condition = true
-			renderer = ${q(node).property(props.property)}
+			renderer = ${q(props.node).property(props.property)}
 		}
 	}
 }
