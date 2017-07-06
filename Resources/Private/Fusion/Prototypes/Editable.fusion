@@ -11,6 +11,7 @@ prototype(PackageFactory.AtomicFusion:Editable) < prototype(PackageFactory.Atomi
 				content = ${q(props.node).property(props.property)}
 				@process.contentElementEditableWrapping = Neos.Neos:ContentElementEditable {
 					property = ${props.property}
+					node = ${props.node}
 				}
 				@if.hasProperty = ${props.property ? true : false}
 			}
