@@ -7,6 +7,7 @@ and afterwards evaluetes the `renderer`
 - `PackageFactory.AtomicFusion:ClassNames`: create conditional class-names from fusion-keys
 - `PackageFactory.AtomicFusion:Editable`: create and editable tag for a property
 - `PackageFactory.AtomicFusion:Content`: component base-prototype for inline editable content nodes 
+- `PackageFactory.AtomicFusion:Augmenter`: add html-attributes to the rendered children 
 
 ## Usage 
 
@@ -90,6 +91,53 @@ prototype(Vendor.Site:ExampleContent) < prototype(PackageFactory.AtomicFusion:Co
 			property = 'description'
 		}
 	}
+}
+```
+
+### 3. Content Augmentation
+
+The Augmenter-component can be used as processor or as a standalone prototype
+
+```
+#
+# Standalone-Augmenter
+# 
+augmentatedContent = PackageFactory.AtomicFusion:Augmenter {
+
+    #
+    # The content that shall be augmented. 
+    # !The result has to be html. 
+    #
+    content = Neos.Fusion:Tag {
+        tagName = 'h2'
+        content = 'Lorem Ipsum'
+    }
+    
+    #
+    # If more than one tag is found the content is wrapped in the 
+    # fallback-Tag before augmentation wich has "div" as default   
+    # 
+    fallbackTagName = 'div'
+        
+    #
+    # All other fusion properties are added to the html-content
+    # as html-attributes.
+    # 
+    class="foo" 
+    data-example="data"
+
+}
+
+#
+# Processor-Augmenter
+#
+augmentatedContent = Neos.Fusion:Tag {
+    tagName = 'h2'
+    content = 'Lorem Ipsum'
+    @process.augment = PackageFactory.AtomicFusion:Augmenter {
+        class = "foo"
+        data-example="data"
+    }
 }
 ```
 
