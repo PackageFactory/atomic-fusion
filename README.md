@@ -102,7 +102,7 @@ The Augmenter-component can be used as processor or as a standalone prototype
 #
 # Standalone-Augmenter
 # 
-augmentatedContent = PackageFactory.AtomicFusion:Augmenter {
+augmentedContent = PackageFactory.AtomicFusion:Augmenter {
 
     #
     # The content that shall be augmented. 
@@ -131,7 +131,7 @@ augmentatedContent = PackageFactory.AtomicFusion:Augmenter {
 #
 # Processor-Augmenter
 #
-augmentatedContent = Neos.Fusion:Tag {
+augmentedContent = Neos.Fusion:Tag {
     tagName = 'h2'
     content = 'Lorem Ipsum'
     @process.augment = PackageFactory.AtomicFusion:Augmenter {
