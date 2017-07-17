@@ -106,7 +106,6 @@ augmentedContent = PackageFactory.AtomicFusion:Augmenter {
 
     #
     # The content that shall be augmented. 
-    # !The result has to be html. 
     #
     content = Neos.Fusion:Tag {
         tagName = 'h2'
