@@ -5,7 +5,7 @@
 ### Fusion-Prototypes
 
 - `PackageFactory.AtomicFusion:Component`: create component that adds all properties to the `props` context 
-  and afterwards evaluetes the `renderer`
+  and afterwards evaluates the `renderer`
 - `PackageFactory.AtomicFusion:ClassNames`: create conditional class-names from fusion-keys
 - `PackageFactory.AtomicFusion:Editable`: create and editable tag for a property
 - `PackageFactory.AtomicFusion:Content`: component base-prototype for inline editable content nodes 
