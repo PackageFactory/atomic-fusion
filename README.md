@@ -1,13 +1,19 @@
 # PackageFactory.AtomicFusion
 
-> Prototypes that help implementing atomic-design and a component-architecture in Neos.Fusion
+> Prototypes and Helpers for implementing a component-architecture with Neos.Fusion
+
+### Fusion-Prototypes
 
 - `PackageFactory.AtomicFusion:Component`: create component that adds all properties to the `props` context 
-and afterwards evaluetes the `renderer`
+  and afterwards evaluetes the `renderer`
 - `PackageFactory.AtomicFusion:ClassNames`: create conditional class-names from fusion-keys
 - `PackageFactory.AtomicFusion:Editable`: create and editable tag for a property
 - `PackageFactory.AtomicFusion:Content`: component base-prototype for inline editable content nodes 
 - `PackageFactory.AtomicFusion:Augmenter`: add html-attributes to the rendered children 
+
+### EEL-Helpers
+
+- `AtomicFusion.classNames`: render all arguments as classNames and apply conditions if needed
 
 ## Usage 
 
@@ -32,15 +38,15 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
     renderer = Neos.Fusion:Tag {
     
         #
-        # the properties of the AtomicFusion:ClassNames object are evaluated 
-        # and the keys of all non-false properties are returned
+        # all arguments of the AtomicFusion:classNames eelHelper are evaluated 
+        # and the following rules are applied
         # 
-        # this allows effective definition of conditional css-classes
-        #
-        attributes.class = PackageFactory.AtomicFusion:ClassNames {
-            component = true
-            component--bold = ${props.bold} 
-        }
+        # - falsy: (null, '', [], {}) -> not rendered
+        # - array: all items that are scalar and truthy are rendered as class-name
+        # - object: keys that have a truthy values are rendered as class-name
+        # - scalar: is cast to string and rendered as class-name
+        # 
+        attributes.class =  ${AtomicFusion:classNames('component' , {'component--bold': props.bold})} 
         
         content = Neos.Fusion:Array {
             headline = Neos.Fusion:Tag {
@@ -138,6 +144,36 @@ augmentedContent = Neos.Fusion:Tag {
         data-example="data"
     }
 }
+```
+
+### ClassName-Mapping
+
+Atomic Fusion brings an fusion-prototype and an eel-helper to optimize 
+the common need of creating classNames based on certain conditions. 
+
+```
+#
+# the properties of the fusion protoype PackageFactory.AtomicFusion:ClassNames 
+# are evaluated nd the keys of all non-false properties are returned
+# 
+attributes.class = PackageFactory.AtomicFusion:ClassNames {
+    component = true
+    component--bold = ${props.bold} 
+}
+
+#
+# all arguments of the AtomicFusion:classNames eelHelper are evaluated 
+# and the following rules are applied
+# 
+# - falsy: (null, '', [], {}) -> not rendered
+# - array: all items that are scalar and truthy are rendered as class-name
+# - object: keys that have a truthy values are rendered as class-name
+# - scalar: is cast to string and rendered as class-name
+# 
+attributes.class = ${AtomicFusion:classNames(
+    "component",
+    {"component--bold": props.bold, "component--highlight": props.highlight}         
+)}
 ```
 
 ## Installation
