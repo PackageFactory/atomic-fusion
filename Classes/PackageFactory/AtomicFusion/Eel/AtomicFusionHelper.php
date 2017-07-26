@@ -37,19 +37,19 @@ class AtomicFusionHelper implements ProtectedContextAwareInterface
     {
         $classNames = [];
         foreach ($arguments as $argument) {
-            if ($argument == true) {
+            if ((bool)$argument === true) {
                 if (is_array($argument)) {
                     $keys = array_keys($argument);
                     $isAssoc = array_keys($keys) !== $keys;
                     if ($isAssoc) {
                         foreach ($argument as $className => $condition) {
-                            if ($condition == true) {
+                            if ((bool)$condition === true) {
                                 $classNames[] = (string)$className;
                             }
                         }
                     } else {
                         foreach ($argument as $className) {
-                            if (is_scalar($className) && $className == true) {
+                            if (is_scalar($className) && (bool)$className === true) {
                                 $classNames[] = (string)$className;
                             }
                         }
