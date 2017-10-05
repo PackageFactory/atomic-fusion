@@ -46,7 +46,7 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
         # - object: keys that have a truthy values are rendered as class-name
         # - scalar: is cast to string and rendered as class-name
         # 
-        attributes.class =  ${AtomicFusion:classNames('component' , {'component--bold': props.bold})} 
+        attributes.class =  ${AtomicFusion.classNames('component' , {'component--bold': props.bold})} 
         
         content = Neos.Fusion:Array {
             headline = Neos.Fusion:Tag {
