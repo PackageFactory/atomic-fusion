@@ -38,7 +38,7 @@ prototype(Vendor.Site:Component) < prototype(PackageFactory.AtomicFusion:Compone
     renderer = Neos.Fusion:Tag {
     
         #
-        # all arguments of the AtomicFusion:classNames eelHelper are evaluated 
+        # all arguments of the AtomicFusion.classNames eelHelper are evaluated 
         # and the following rules are applied
         # 
         # - falsy: (null, '', [], {}) -> not rendered
