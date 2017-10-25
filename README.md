@@ -170,7 +170,7 @@ attributes.class = PackageFactory.AtomicFusion:ClassNames {
 # - object: keys that have a truthy values are rendered as class-name
 # - scalar: is cast to string and rendered as class-name
 # 
-attributes.class = ${AtomicFusion:classNames(
+attributes.class = ${AtomicFusion.classNames(
     "component",
     {"component--bold": props.bold, "component--highlight": props.highlight}         
 )}
