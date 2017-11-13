@@ -20,6 +20,7 @@ prototype(PackageFactory.AtomicFusion:Editable) < prototype(PackageFactory.Atomi
 		notEditable {
 			condition = true
 			renderer = ${q(props.node).property(props.property)}
+			@process.convertUris = Neos.Neos:ConvertUris
 		}
 	}
 }
