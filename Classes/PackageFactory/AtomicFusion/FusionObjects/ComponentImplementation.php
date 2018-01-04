@@ -36,12 +36,11 @@ class ComponentImplementation extends ArrayImplementation
     protected $ignoreProperties = ['__meta', 'renderer'];
 
     /**
-     * Evaluate the fusion-keys and transfer the result into the context as ``props``
-     * afterwards evaluate the ``renderer`` with this context
+     * Get the component props as an associative array
      *
-     * @return void|string
+     * @return array
      */
-    public function evaluate()
+    public function getProps()
     {
         $sortedChildFusionKeys = $this->sortNestedFusionKeys();
 
@@ -54,6 +53,17 @@ class ComponentImplementation extends ArrayImplementation
             }
         }
 
+        return $props;
+    }
+
+    /**
+     * Render the component with the given props
+     *
+     * @param array $props
+     * @return void|string
+     */
+    public function renderComponent(array $props)
+    {
         $context = $this->runtime->getCurrentContext();
         $context['props'] = $props;
         $this->runtime->pushContextArray($context);
@@ -61,5 +71,17 @@ class ComponentImplementation extends ArrayImplementation
         $this->runtime->popContext();
 
         return $result;
+    }
+
+    /**
+     * Evaluate the fusion-keys and transfer the result into the context as ``props``
+     * afterwards evaluate the ``renderer`` with this context
+     *
+     * @return void|string
+     */
+    public function evaluate()
+    {
+        $props = $this->getProps();
+        return $this->renderComponent($props);
     }
 }
