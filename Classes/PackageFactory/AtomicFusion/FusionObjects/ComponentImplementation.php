@@ -36,6 +36,16 @@ class ComponentImplementation extends ArrayImplementation
     protected $ignoreProperties = ['__meta', 'renderer'];
 
     /**
+     * Expose fusion object name for component reflection
+     *
+     * @return string
+     */
+    public function getFusionObjectName()
+    {
+        return $this->fusionObjectName;
+    }
+
+    /**
      * Get the component props as an associative array
      *
      * @return array
