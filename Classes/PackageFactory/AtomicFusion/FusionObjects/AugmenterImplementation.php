@@ -15,7 +15,7 @@ namespace PackageFactory\AtomicFusion\FusionObjects;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Fusion\FusionObjects\ArrayImplementation;
-use Neos\Neos\Service\HtmlAugmenter;
+use Neos\Fusion\Service\HtmlAugmenter;
 
 /**
  * A Fusion Augmenter-Object
