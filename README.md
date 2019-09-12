@@ -1,4 +1,6 @@
-# PackageFactory.AtomicFusion
+# DEPRECATED PackageFactory.AtomicFusion
+
+**This package is deprecated the fusion prototypes `Component`, `ContentComponent`, `Augmenter` and `Editable` were integrated into the core of Neos itself https://neos.readthedocs.io/en/stable/References/NeosFusionReference.html. The AtomicFusion:classNames helper was extracted amd can be found here https://github.com/PackageFactory/atomic-fusion-classnames. This package will stay available for existing setups that depend on it but no bugfixes nor features will be added here.**
 
 > Prototypes and Helpers for implementing a component-architecture with Neos.Fusion
 
